@@ -21,6 +21,13 @@ def read_data(file_name, field):
         else:
             return None
 
+def linear_search(sequence, search_number):
+    list_of_times = []
+    for index, number in enumerate(sequence):
+        if number == search_number:
+            list_of_times.append(index)
+    return {"position": list_of_times, "count": len(list_of_times)}
+
 def main():
     pass
 
