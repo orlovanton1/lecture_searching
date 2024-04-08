@@ -1,4 +1,5 @@
 import os
+import json
 
 # get current working directory path
 cwd_path = os.getcwd()
@@ -12,7 +13,13 @@ def read_data(file_name, field):
     :return: (list, string),
     """
     file_path = os.path.join(cwd_path, file_name)
-
+    file_name = "sequential.json"
+    with open (file_name, "r") as file_obj:
+        data = json.load(file_obj)
+        if field in data.keys():
+            return data[field]
+        else:
+            return None
 
 def main():
     pass
